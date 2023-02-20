@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.8",
+    "@mui/styled-engine": "^5.11.9",
     "@splinetool/react-spline": "^2.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
