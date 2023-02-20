@@ -21,6 +21,11 @@ const HeaderHolder = styled('div')`
       display: flex;
       flex-direction: row;
       gap: 1rem;
+      & button {
+        & svg {
+          color: white;
+        }
+      }
     }
     #center {
       display: flex;
@@ -40,6 +45,11 @@ const HeaderHolder = styled('div')`
         align-items: center;
         justify-content: end;
         gap: 1rem;
+        & button {
+          & svg{
+            color: white;
+          }
+        }
         
       }
     }
