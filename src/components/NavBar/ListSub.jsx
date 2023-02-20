@@ -8,6 +8,7 @@ const ListSub = ({ Icon, Text, Live, New }) => {
   const [isNew] = useState(New);
 
   const ButtonHolder = styled('div')`
+    width: 100%;
     padding: 0.5rem 3rem 0.5rem 0.8rem;
     display: flex;
     justify-content: flex-start;
@@ -41,13 +42,32 @@ const ListSub = ({ Icon, Text, Live, New }) => {
       font-size: 12px;
       font-weight: 500;
     }
+    @media (max-width: 850px) {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      gap: 0rem;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 0.6rem;
+      cursor: pointer;
+      & h4 {
+        display: none;
+      }
+      & span {
+        display: none;
+      }
+      #live {
+        display: none;
+      }
+    }
   `;
 
   return (
     <ButtonHolder>
       <img src={Icon} />
       <h4>{Text}</h4>
-      {isLive && <SensorsIcon />}
+      {isLive && <SensorsIcon id='live' />}
       {isNew && <span />}
     </ButtonHolder>
   );

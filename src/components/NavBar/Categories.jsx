@@ -20,16 +20,25 @@ import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import SportsFootballIcon from '@mui/icons-material/SportsFootball';
-
 const Categories = () => {
   const CategoriesHolder = styled('div')`
-    width: 500px;
+    width: 100%;
+    z-index: 99;
     display: flex;
     padding: 12px;
     #sidebar_container {
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
+      & h5 {
+        font-weight: 200;
+        line-height: 1.1rem;
+        color: #aaa;
+        width: 200px;
+      }
+      & h6 {
+        color: #717171;
+      }
     }
     .MuiDivider-root {
       background: rgba(255, 255, 255, 10%);
@@ -43,7 +52,15 @@ const Categories = () => {
     #Subscription {
       margin-top: 0.5rem;
     }
+    @media (max-width: 850px) {
+      #Subscription,
+      & h4,
+      & h5 {
+        display: none;
+      }
+    }
   `;
+
   return (
     <CategoriesHolder>
       <div id='sidebar_container'>
@@ -53,20 +70,13 @@ const Categories = () => {
         <Divider />
         <ListItem Text='Biblioteka' Icon={<VideoLibraryIcon />} />
         <ListItem Text='Historia' Icon={<RestoreIcon />} />
-        <ListItem
-          Text='Twoje Filmy'
-          Icon={<PlayArrowIcon style={{ border: '1px solid white', transform: 'scale(80%)' }} />}
-        />
+        <ListItem Text='Twoje Filmy' Icon={<PlayArrowIcon />} />
         <ListItem Text='Do obejrzenia' Icon={<ScheduleIcon />} />
         <ListItem Text='Polubione filmy' Icon={<ThumbUpOffAltIcon />} />
         <ListItem Text='Pokaż więcej' Icon={<KeyboardArrowDownIcon />} />
         <Divider />
         <h4 id='Subscription'>Subskrypcje</h4>
-        <ListSub
-          Icon='https://cdn.discordapp.com/emojis/1050427266934521876.webp?size=96&quality=lossless'
-          Text='Dawid Jasper'
-          New={true}
-        />
+        <ListSub Icon='https://cdn.discordapp.com/emojis/1050427266934521876.webp' Text='Jasper' New={true} />
         <ListSub Icon='https://cdn.7tv.app/emote/61c71693a5b6fc4c22c18203/4x.webp' Text='Płock programuje' New={true} />
         <ListSub Icon='https://cdn.7tv.app/emote/61c71693a5b6fc4c22c18203/4x.webp' Text='Płock programuje' New={true} />
         <ListSub Icon='https://cdn.7tv.app/emote/61c71693a5b6fc4c22c18203/4x.webp' Text='Płock programuje' New={true} />
@@ -118,6 +128,17 @@ const Categories = () => {
           Text='Youtube TV'
           Icon='https://www.freepnglogos.com/uploads/youtube-play-red-logo-png-transparent-background-6.png'
         />
+        <Divider />
+        <ListItem Text='Ustawienia' Icon={<SensorsIcon />} />
+        <ListItem Text='Historia raportów' Icon={<SportsEsportsIcon />} />
+        <ListItem Text='Pomoc' Icon={<NewspaperIcon />} />
+        <ListItem Text='Prześlij opinię' Icon={<SportsFootballIcon />} />
+        <Divider />
+        <h5>
+          Informacje Centrum prasowe Prawa autorskie Skontaktuj się z nami Twórcy Reklamy Deweloperzy Warunki Prywatność
+          Zasady i bezpieczeństwo Jak działa YouTube Przetestuj nowe funkcje
+        </h5>
+        <h6>© 2023 Google LLC</h6>
       </div>
     </CategoriesHolder>
   );

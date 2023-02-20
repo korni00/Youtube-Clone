@@ -1,15 +1,16 @@
-import { styled, IconButton, Tooltip } from '@mui/material';
+import { styled, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import UploadIcon from '@mui/icons-material/Upload';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 //icons
 import Logo from './Logo';
 import Search from './Search';
 import BorderButton from './BorderButton';
 import { useState } from 'react';
-function Header() {
-  const HeaderHolder = styled('div')`
+const HeaderHolder = styled('div')`
     height: 56px;
+    
     width: 100%;
     padding: 0 16px;
     display: flex;
@@ -49,11 +50,18 @@ function Header() {
       margin-left: 0px;
     }
   `;
+function Header() {
+  const [click, setClick] = useState(false);
+
+  const handleChange = () => {
+    setClick(!click);
+  };
+
   return (
     <HeaderHolder>
       <span id='start'>
         <IconButton>
-          <MenuIcon />
+          <MenuIcon onClick={handleChange} />
         </IconButton>
         <Logo />
       </span>
@@ -64,6 +72,7 @@ function Header() {
         <div id='buttons'>
           <BorderButton TooltipName='Prześlij' Icon={<UploadIcon />} />
           <BorderButton TooltipName='Powiadomienia' Icon={<NotificationsNoneIcon />} />
+          <BorderButton TooltipName='Konto' Icon={<AccountCircleIcon />} />
         </div>
       </span>
     </HeaderHolder>

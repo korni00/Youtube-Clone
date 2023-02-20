@@ -1,17 +1,47 @@
 import SimpleBarReact from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
-import Header from './components/Header';
-import Categories from './components/Categories';
+import { useMediaQuery } from '@mui/material';
+import { theme } from './style';
+
+import Header from './components/HeaderContainer/Header';
+import Categories from './components/NavBar/Categories';
+import CategorySwipe from './components/Content/CategorySwipe';
+import MainContent from './components/Content/MainContent';
+
 function App() {
+  const isMediumDown = useMediaQuery(theme.breakpoints.down('md'));
   return (
-    <SimpleBarReact style={{ maxHeight: '100vh' }}>
+    <>
       <Header />
-      <div style={{ width: '240px', display: 'flex', flexDirection: 'row' }}>
-        <SimpleBarReact style={{ maxHeight: '94vh', width: '240px', overflowX: 'hidden' }}>
+      <span style={{ display: 'flex', flexDirection: 'row' }}>
+        <SimpleBarReact
+          style={{
+            maxHeight: '100vh',
+            overflowX: 'hidden',
+            width: '240px',
+            minWidth: isMediumDown ? '80px' : '240px',
+          }}
+        >
           <Categories />
         </SimpleBarReact>
-      </div>
-    </SimpleBarReact>
+
+        {/* main content */}
+        <span style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ height: '100vh', width: '100%' }}>
+            <SimpleBarReact
+              style={{
+                maxHeight: '100vh',
+                overflowX: 'hidden',
+                width: '90vw',
+              }}
+            >
+              <CategorySwipe />
+              <MainContent />
+            </SimpleBarReact>
+          </div>
+        </span>
+      </span>
+    </>
   );
 }
 
