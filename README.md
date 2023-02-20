@@ -1,6 +1,6 @@
 
 ## Preview
-yt-clone-reactjsx.netlify.app
+<a href="yt-clone-reactjsx.netlify.app" > yt-clone-reactjsx.netlify.app </a>
 
 ## Tech Stack
 ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
