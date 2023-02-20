@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { styled, Button } from '@mui/material';
+import SimpleBarReact from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
 const CategorySwipe = () => {
   const SwipeSkeleton = styled('div')`
     height: 45px;
-    padding: 2rem 2rem;
+    padding: 2rem 0rem;
     display: flex;
     justify-content: start;
     align-items: center;

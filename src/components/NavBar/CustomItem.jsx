@@ -3,7 +3,7 @@ import React from 'react';
 import { styled, Hidden } from '@mui/material';
 import { IconButton } from '@mui/material';
 
-const ListItem = ({ Icon, Text }) => {
+const CustomItem = ({ Icon, Text }) => {
   const ButtonHolder = styled('div')`
     width: 100%;
     padding: 0.5rem 3rem 0.5rem 0.8rem;
@@ -47,4 +47,4 @@ const ListItem = ({ Icon, Text }) => {
   );
 };
 
-export default ListItem;
+export default CustomItem;
