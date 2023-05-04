@@ -1,4 +1,6 @@
 
+#just a simple static youtube clone
+
 ## Preview
 <a href="yt-clone-reactjsx.netlify.app" > yt-clone-reactjsx.netlify.app </a>
 
